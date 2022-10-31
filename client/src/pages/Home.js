@@ -15,7 +15,10 @@ function Home() {
         <br />
         <p>We offer the top golfing products on the market today</p>
       </div>
-      <CardComponent />
+      <div className="titleist-img"></div>
+      <div className="card-comps">
+        <CardComponent />
+      </div>
     </>
   );
 }

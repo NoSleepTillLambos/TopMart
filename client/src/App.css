@@ -34,7 +34,24 @@
 .introduction {
   margin-left: 20px;
   height: 200px;
+  float: left;
 }
 p {
   opacity: 0.8;
+}
+.card-comps {
+  margin-top: 100px;
+}
+.titleist-img {
+  height: 400px;
+  margin-right: 10px;
+  width: 63%;
+  border-radius: 10px;
+  margin-left: 130px;
+  float: left;
+  background-position: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  background-size: cover;
+  background-image: url("./assets/titleits.jpg");
 }

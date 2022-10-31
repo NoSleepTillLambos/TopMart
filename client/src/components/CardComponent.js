@@ -13,7 +13,15 @@ import titelist from "../assets/titleist.png";
 export default function ImgMediaCard() {
   return (
     <>
-      <Card sx={{ maxWidth: 290, height: 350 }} className="irons-card">
+      <Card
+        sx={{
+          maxWidth: 290,
+          height: 350,
+          float: "right",
+          marginRight: "140px",
+        }}
+        className="irons-card"
+      >
         <CardMedia component="img" alt="irons" height="190" image={logo} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
@@ -29,7 +37,10 @@ export default function ImgMediaCard() {
           </Button>
         </CardActions>
       </Card>
-      <Card sx={{ maxWidth: 290, height: 350 }} className="golf-card">
+      <Card
+        sx={{ maxWidth: 290, height: 350, float: "right" }}
+        className="golf-card"
+      >
         <CardMedia component="img" alt="irons" height="190" image={callaway} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
@@ -45,7 +56,10 @@ export default function ImgMediaCard() {
           </Button>
         </CardActions>
       </Card>
-      <Card sx={{ maxWidth: 290, height: 350 }} className="bag-card">
+      <Card
+        sx={{ maxWidth: 290, height: 350, float: "right" }}
+        className="bag-card"
+      >
         <CardMedia component="img" alt="irons" height="190" image={cobra} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
@@ -61,7 +75,10 @@ export default function ImgMediaCard() {
           </Button>
         </CardActions>
       </Card>
-      <Card sx={{ maxWidth: 290, height: 350 }} className="accessories-card">
+      <Card
+        sx={{ maxWidth: 290, height: 350, float: "left", marginLeft: "150px" }}
+        className="accessories-card"
+      >
         <CardMedia component="img" alt="irons" height="190" image={titelist} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
