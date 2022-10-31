@@ -1,0 +1,17 @@
+.outerCon {
+  background-image: url("../assets/signBackground.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 86vh;
+}
+.signUp {
+  background-color: white;
+  height: 50vh;
+  width: 50%;
+  margin: auto;
+  border-radius: 8px;
+  position: fixed;
+  opacity: 0.9;
+  margin-left: 400px;
+  margin-top: 120px;
+}

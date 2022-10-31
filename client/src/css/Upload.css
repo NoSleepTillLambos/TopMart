@@ -1,0 +1,57 @@
+h4 {
+  color: black;
+  text-align: center;
+  margin-top: 50px;
+}
+form {
+  text-align: center;
+  margin: auto;
+  margin-top: 5%;
+}
+Button {
+  margin-top: 30px;
+}
+#submit-prod {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label {
+  text-align: left;
+  display: block;
+}
+.create h2 {
+  font-size: 30px;
+  color: #74bde0;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.create input,
+.create textarea,
+.create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #74bde0;
+  box-sizing: border-box;
+  display: block;
+  border-radius: 8px;
+}
+.create button {
+  background: #74bde0;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.glass-back {
+  height: 80vh;
+  background-color: #74bde0;
+  width: 50%;
+  float: left;
+}
