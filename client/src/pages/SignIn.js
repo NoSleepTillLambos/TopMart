@@ -35,17 +35,13 @@ export default function SignUp() {
     };
 
     axios
-      .post("http://localhost:5000/api/loginUser", payload)
+      .post("http://localhost:5000/api/loginuser", payload)
       .then((res) => {
-        if (!res.data) {
-          alert("bad request");
+        if (res.data.user) {
+          alert("Welcome user");
+          navigate("/");
         } else {
-          if (res.data.user) {
-            alert("Welcome user");
-            navigate("/");
-          } else {
-            alert("not happening bitch");
-          }
+          alert("not happening");
         }
       })
       .catch(function (err) {

@@ -41,3 +41,13 @@
   border-radius: 20px;
   opacity: 0.3;
 }
+.cart {
+  background-image: url("../assets/Group76.png");
+  height: 50px;
+  width: 50px;
+}
+.login {
+  background-image: url("../assets/login.png");
+  height: 50px;
+  width: 50px;
+}

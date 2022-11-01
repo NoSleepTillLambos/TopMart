@@ -19,6 +19,7 @@ function Home() {
       <div className="card-comps">
         <CardComponent />
       </div>
+      <div className="cart-icon"></div>
     </>
   );
 }
