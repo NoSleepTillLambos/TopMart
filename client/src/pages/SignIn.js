@@ -38,8 +38,11 @@ export default function SignUp() {
       .post("http://localhost:5000/api/loginuser", payload)
       .then((res) => {
         if (res.data.user) {
-          alert("Welcome user");
-          navigate("/");
+          sessionStorage.setItem("username", res.data.username);
+          let admin = sessionStorage.getItem("username");
+          console.log(admin);
+          alert("Welcome");
+          navigate("/Upload");
         } else {
           alert("not happening");
         }

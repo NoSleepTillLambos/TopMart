@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-const clientSchema = mongoose.Schema({
+const UserSchema = mongoose.Schema({
   username: {
     type: String,
     required: true,
@@ -16,7 +16,7 @@ const clientSchema = mongoose.Schema({
   },
 });
 
-clientSchema.pre("save", async function (next) {
+UserSchema.pre("save", async function (next) {
   try {
     const salt = await bcrypt.genSalt(10);
     const hashPass = await bcrypt.hash(this.password, salt);
@@ -27,7 +27,7 @@ clientSchema.pre("save", async function (next) {
   }
 });
 
-clientSchema.methods.comparePassword = function (plainPass, cb) {
+UserSchema.methods.comparePassword = function (plainPass, cb) {
   bcrypt.compare(plainPass, this.password, function (err, isMatch) {
     if (err) {
       return cb(err);
@@ -36,7 +36,7 @@ clientSchema.methods.comparePassword = function (plainPass, cb) {
   });
 };
 
-clientSchema.methods.generateToken = function (cb) {
+UserSchema.methods.generateToken = function (cb) {
   const client = this;
   const token = jwt.sign(client._id.toHexString(), "secret");
 
@@ -47,4 +47,4 @@ clientSchema.methods.generateToken = function (cb) {
   });
 };
 
-module.exports = mongoose.model("clients", clientSchema);
+module.exports = mongoose.model("users", UserSchema);

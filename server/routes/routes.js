@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const router = express();
 const productSchema = require("../models/products");
-const clientSchema = require("../models/clients");
+const UserSchema = require("../models/clients");
 const {
   createProduct,
   getAllProducts,
@@ -15,11 +15,36 @@ const {
 } = require("../controllers/productController");
 
 // POSTING A SINGLE PRODUCT
-router.post("/api/addproduct", createProduct);
+router.post("/api/newProduct", (req, res) => {
+  const newProduct = new productSchema({
+    productName: req.body.productName,
+    productPrice: req.body.productPrice,
+    productDescription: req.body.productDescription,
+    productImg: req.body.productImg,
+    productRating: req.body.productRating,
+    hand: {
+      orientation: req.body.hand.orientation,
+    },
+  });
+  newProduct
+    .save()
+    .then((item) => {
+      res.json(item);
+    })
+    .catch((err) => {
+      res.status(400).json({ msg: "There was an error", err: err });
+    });
+});
+
+// GETTING ALL PRODUCTS
+router.get("/api/allproducts", async (req, res) => {
+  const findProducts = await productSchema.find();
+  res.json(findProducts);
+});
 
 // REGISTER USERS
 router.post("/api/registeruser", (req, res) => {
-  const newUser = new clientSchema(req.body);
+  const newUser = new UserSchema(req.body);
 
   newUser
     .save()
@@ -33,7 +58,7 @@ router.post("/api/registeruser", (req, res) => {
 
 // LOGIN WITH JSON WEBTKN
 router.post("/api/loginuser", async (req, res) => {
-  const findUser = await clientSchema.findOne({
+  const findUser = await UserSchema.findOne({
     username: req.body.username,
   });
 
@@ -47,9 +72,6 @@ router.post("/api/loginuser", async (req, res) => {
     res.json({ msg: "user not found" });
   }
 });
-
-// GETTING ALL PRODUCTS
-router.get("/api/allproducts", getAllProducts);
 
 // GETTING ONE PRODUCT
 router.get("/api/oneproduct/:id", getOneProduct);

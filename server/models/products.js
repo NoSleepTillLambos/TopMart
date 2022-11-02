@@ -21,14 +21,8 @@ const productSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  hand: [
-    {
-      orientation: { type: String, required: true },
-    },
-  ],
-  Date: {
-    type: Date,
-    default: Date.now,
+  hand: {
+    orientation: { type: String, required: true },
   },
 });
 

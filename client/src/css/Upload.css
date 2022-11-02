@@ -1,57 +1,76 @@
-h4 {
-  color: black;
-  text-align: center;
-  margin-top: 50px;
+* {
+  font-family: "Raleway", sans-serif;
 }
-form {
+.manageProducts {
+  width: 90%;
+  margin-top: -100px;
   text-align: center;
   margin: auto;
-  margin-top: 5%;
+  padding: 5%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
-Button {
-  margin-top: 30px;
+
+.manageProducts .products {
+  margin: 0;
+
+  padding-top: 0;
+  width: 60%;
+  overflow: auto;
 }
-#submit-prod {
-  margin-top: 10px;
-  margin-bottom: 30px;
+
+.manageProducts p {
+  margin-bottom: 5%;
 }
-.create {
-  max-width: 400px;
-  margin: 0 auto;
+
+/* Add a product modal */
+.AddProduct {
+  width: 50%;
+  height: 80vh;
+  margin-top: 25px;
+  float: right;
+  margin-right: 20px;
+  border-radius: 5px;
   text-align: center;
+  box-shadow: 10px 8px 39px -9px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 8px 39px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 8px 39px -9px rgba(0, 0, 0, 0.75);
 }
-.create label {
-  text-align: left;
+label,
+input {
   display: block;
 }
-.create h2 {
-  font-size: 30px;
-  color: #74bde0;
-  margin-bottom: 30px;
+
+form {
+  margin: auto;
   margin-top: 30px;
 }
-.create input,
-.create textarea,
-.create select {
-  width: 100%;
-  padding: 6px 10px;
-  margin: 10px 0;
-  border: 1px solid #74bde0;
+input {
+  padding: 5px;
+  margin: auto;
+  margin-top: 20px;
+  width: 50%;
+  border: 0.5px solid black;
+  border-radius: 4px;
+  align-items: center;
   box-sizing: border-box;
-  display: block;
-  border-radius: 8px;
 }
-.create button {
-  background: #74bde0;
-  color: #fff;
+form button {
   border: 0;
-  padding: 8px;
-  border-radius: 8px;
+  color: black;
+  padding: 10px;
+  border-radius: 4px;
   cursor: pointer;
 }
-.glass-back {
-  height: 80vh;
-  background-color: #74bde0;
-  width: 50%;
+
+/* product data on left hand side  */
+.display-products {
   float: left;
+  width: 45%;
+  margin-top: 25px;
+  border-radius: 5px;
+  border: 0.5px solid #74bde0;
+  margin-left: 20px;
+  height: 80vh;
 }
