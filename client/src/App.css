@@ -55,3 +55,23 @@ p {
   background-size: cover;
   background-image: url("./assets/titleits.jpg");
 }
+.imgPrev {
+  width: 100px;
+  height: 100px;
+  right: 24px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: -50px;
+  margin-right: 40px;
+  position: absolute;
+  background-color: #f7f7f7;
+}
+
+.imgPrev img {
+  width: 100%;
+}
+
+.prodImage {
+  width: 100px;
+  height: 100px;
+}

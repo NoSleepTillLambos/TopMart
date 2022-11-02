@@ -13,16 +13,17 @@ const productSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  productImg: {
-    type: String,
-    required: true,
-  },
   productRating: {
     type: Number,
     required: true,
   },
-  hand: {
-    orientation: { type: String, required: true },
+  variations: {
+    right: { type: String, required: true },
+    left: { type: String, required: true },
+  },
+  image: {
+    type: String,
+    required: true,
   },
 });
 

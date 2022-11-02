@@ -61,7 +61,6 @@ const loginUser = async (req, res) => {
 };
 
 module.exports = {
-  getAllProducts,
   getOneProduct,
   deleteProduct,
   updateProduct,

@@ -4,37 +4,60 @@ const bcrypt = require("bcrypt");
 const router = express();
 const productSchema = require("../models/products");
 const UserSchema = require("../models/clients");
+const multer = require("multer");
+const path = require("path");
+
+// multer middleware
+const storedProductImage = multer.diskStorage({
+  destination: (req, file, callBack) => {
+    callBack(null, "./productImages");
+  },
+
+  filename: (req, file, callBack) => {
+    callBack(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const uploadProductImage = multer({ storage: storedProductImage });
+
+////////////////////////////////////////////////////////////////// END OF MM ////////////////////////////////////////////
 const {
-  createProduct,
-  getAllProducts,
   getOneProduct,
   updateProduct,
   deleteProduct,
-  registerUser,
-  loginUser,
 } = require("../controllers/productController");
 
 // POSTING A SINGLE PRODUCT
-router.post("/api/newProduct", (req, res) => {
-  const newProduct = new productSchema({
-    productName: req.body.productName,
-    productPrice: req.body.productPrice,
-    productDescription: req.body.productDescription,
-    productImg: req.body.productImg,
-    productRating: req.body.productRating,
-    hand: {
-      orientation: req.body.hand.orientation,
-    },
-  });
-  newProduct
-    .save()
-    .then((item) => {
-      res.json(item);
-    })
-    .catch((err) => {
-      res.status(400).json({ msg: "There was an error", err: err });
+router.post(
+  "/api/newProduct",
+  uploadProductImage.single("image"),
+  (req, res) => {
+    // MULTER IMAGE HANDLING
+    let data = JSON.parse(req.body.information);
+    console.log(req.file.filename);
+
+    // PRODUCT SCHEMA
+    const newProduct = new productSchema({
+      name: data.name,
+      price: data.price,
+      description: data.description,
+      rating: data.rating,
+      variations: {
+        right: data.variations.right,
+        left: data.body.variations.left,
+      },
+      image: data.file.filename,
     });
-});
+    newProduct
+      .save()
+      .then((item) => {
+        res.json(item);
+      })
+      .catch((err) => {
+        res.status(400).json({ msg: "There was an error", err: err });
+      });
+  }
+);
 
 // GETTING ALL PRODUCTS
 router.get("/api/allproducts", async (req, res) => {

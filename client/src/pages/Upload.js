@@ -4,6 +4,8 @@ import { useState, useRef } from "react";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import axios from "axios";
+import "../App.css";
+import { Button } from "@mui/material";
 
 function Upload() {
   const [productName, setProductName] = useState();
@@ -11,8 +13,26 @@ function Upload() {
   const [productDescription, setProductDescription] = useState();
   const [productImg, setProductImg] = useState();
   const [productRating, setProductRating] = useState();
-  const [productOrientation, setProductOrientation] = useState();
+  const [variationRight, setVariationRight] = useState();
+  const [variationLeft, setVariationLeft] = useState();
 
+  const [imageName, setImageName] = useState("Please upload an image");
+
+  const getImageValue = (e) => {
+    // where multer comes in
+
+    let value = e.target.value;
+    let imageName = value.substring(12);
+    setImageName(imageName);
+    let reader = new FileReader();
+
+    reader.onload = () => {
+      let output = document.getElementById("imgPrev");
+      output.src = reader.result;
+    };
+
+    reader.readAsDataURL(e.target.files[0]);
+  };
   const getName = (e) => {
     let value = e.target.value;
     setProductName(value);
@@ -21,6 +41,10 @@ function Upload() {
   const getPrice = (e) => {
     let value = e.target.value;
     setPrice(value);
+  };
+  const getImage = (e) => {
+    let value = e.target.value;
+    setImageName(value);
   };
 
   const getProductDescription = (e) => {
@@ -32,22 +56,27 @@ function Upload() {
     setProductRating(value);
   };
 
-  const getOrientation = (e) => {
+  const getVariationRight = (e) => {
     let value = e.target.value;
-    setProductOrientation(value);
+    setVariationRight(value);
+  };
+  const getVariationLeft = (e) => {
+    let value = e.target.value;
+    setVariationLeft(value);
   };
 
   const addProduct = (e) => {
     e.preventDefault();
 
     let payload = {
-      productName: productName,
-      productPrice: productPrice,
-      productDescription: productDescription,
-      // productImg: req.body.productImg,
-      productRating: productRating,
-      hand: {
-        orientation: productOrientation,
+      name: productName,
+      price: productPrice,
+      description: productDescription,
+      image: imageName,
+      rating: productRating,
+      variations: {
+        right: variationRight,
+        left: variationLeft,
       },
     };
 
@@ -55,7 +84,9 @@ function Upload() {
 
     document.getElementById("pName").value = "";
     document.getElementById("price").value = "";
-    document.getElementById("orientation").value = "";
+    document.getElementById("right").value = "";
+    document.getElementById("left").value = "";
+    document.getElementById("image").value = "";
     document.getElementById("rating").value = "";
     document.getElementById("productDescription").value = "";
   };
@@ -66,15 +97,20 @@ function Upload() {
         <h3>Products currently on display: </h3>
       </div>
       <div className="AddProduct">
-        <h3>Add products below</h3>
         <hr />
-        <IconContext.Provider value={{ color: "black", size: "50px" }}>
-          <div>
-            <AiOutlineCloudUpload />
-          </div>
-        </IconContext.Provider>
-        <h5>Upload image</h5>
+        Upload File
+        <input type="file" id="imgUpload" onChange={getImageValue} />
+        <div className="imgPrev">
+          <img id="imgPrev"></img>
+        </div>
+        <p>{imageName}</p>
         <form>
+          <input
+            id="image"
+            onChange={getImage}
+            placeholder="Product Name..."
+            type="text"
+          />
           <input
             id="pName"
             onChange={getName}
@@ -93,8 +129,15 @@ function Upload() {
           <label>Orientation</label>
           <input
             className="qty"
-            onChange={getOrientation}
-            id="orientation"
+            onChange={getVariationRight}
+            id="left"
+            placeholder="Orientation"
+            type="text"
+          />
+          <input
+            className="qty"
+            onChange={getVariationLeft}
+            id="right"
             placeholder="Orientation"
             type="text"
           />
@@ -117,7 +160,7 @@ function Upload() {
           />
 
           <br />
-          <button onClick={addProduct}>Add Product!</button>
+          <Button onClick={addProduct}>Add Product!</Button>
         </form>
       </div>
       <div className="products"></div>
