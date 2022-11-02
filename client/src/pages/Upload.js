@@ -8,6 +8,9 @@ import "../App.css";
 import { Button } from "@mui/material";
 
 function Upload() {
+  const [products, setProducts] = useState();
+  const [updateProducts, setUpdateProducts] = useState(false);
+
   const [productName, setProductName] = useState();
   const [productPrice, setPrice] = useState();
   const [productDescription, setProductDescription] = useState();
@@ -17,9 +20,37 @@ function Upload() {
   const [variationLeft, setVariationLeft] = useState();
 
   const [imageName, setImageName] = useState("Please upload an image");
+  const [productImage, setProductImage] = useState();
+
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000/api/allProducts")
+  //     .then((res) => {
+  //       let productData = res.data;
+  //       console.log(productData);
+  //       let URL = "http://localhost:5000/productImages/";
+  //       let renderProducts = productData.map((item) => (
+  //         <EditProductCard
+  //           key={item._id}
+  //           productId={item._id}
+  //           productName={item.productName}
+  //           productDescription={item.productDescription}
+  //           price={item.price}
+  //           stock={item.stock}
+  //            editRender = { setRenderProducts };
+  //         />
+  //       ));
+
+  //       setProducts(renderProducts);
+  //       setUpdateProducts(false);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, [updateProducts]);
 
   const getImageValue = (e) => {
     // where multer comes in
+    let imageFile = e.target.files[0];
+    setProductImage(imageFile);
 
     let value = e.target.value;
     let imageName = value.substring(12);
@@ -33,60 +64,51 @@ function Upload() {
 
     reader.readAsDataURL(e.target.files[0]);
   };
-  const getName = (e) => {
-    let value = e.target.value;
-    setProductName(value);
-  };
+  let defaultFormValues = [
+    "name",
+    "price",
+    "left",
+    "right",
+    "rating",
+    "description",
+  ];
 
-  const getPrice = (e) => {
-    let value = e.target.value;
-    setPrice(value);
-  };
-  const getImage = (e) => {
-    let value = e.target.value;
-    setImageName(value);
-  };
+  const [formValues, setFormValues] = useState(defaultFormValues);
 
-  const getProductDescription = (e) => {
-    let value = e.target.value;
-    setProductDescription(value);
-  };
-  const getRating = (e) => {
-    let value = +e.target.value;
-    setProductRating(value);
-  };
-
-  const getVariationRight = (e) => {
-    let value = e.target.value;
-    setVariationRight(value);
-  };
-  const getVariationLeft = (e) => {
-    let value = e.target.value;
-    setVariationLeft(value);
+  const getValues = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
   };
 
   const addProduct = (e) => {
     e.preventDefault();
 
+    const payloadData = new FormData();
+
     let payload = {
-      name: productName,
-      price: productPrice,
-      description: productDescription,
-      image: imageName,
-      rating: productRating,
+      name: formValues["name"],
+      price: +formValues["price"],
+      description: formValues["description"],
+      // image: imageName,
+      rating: +formValues["rating"],
       variations: {
-        right: variationRight,
-        left: variationLeft,
+        right: formValues["right"],
+        left: formValues["left"],
       },
     };
 
-    axios.post("http://localhost:5000/api/newProduct", payload);
+    payloadData.append("information", JSON.stringify(payload));
+    payloadData.append("image", productImage);
+    console.log(payload);
+    console.log(payloadData);
+    axios.post("http://localhost:5000/api/newProduct", payloadData);
 
+    // renders true after useffect
+    setUpdateProducts(true);
     document.getElementById("pName").value = "";
     document.getElementById("price").value = "";
     document.getElementById("right").value = "";
     document.getElementById("left").value = "";
-    document.getElementById("image").value = "";
     document.getElementById("rating").value = "";
     document.getElementById("productDescription").value = "";
   };
@@ -106,20 +128,16 @@ function Upload() {
         <p>{imageName}</p>
         <form>
           <input
-            id="image"
-            onChange={getImage}
-            placeholder="Product Name..."
-            type="text"
-          />
-          <input
+            name="name"
             id="pName"
-            onChange={getName}
+            onChange={getValues}
             placeholder="Product Name..."
             type="text"
           />
           <input
             id="price"
-            onChange={getPrice}
+            name="price"
+            onChange={getValues}
             placeholder="price"
             type="number"
           />
@@ -128,16 +146,18 @@ function Upload() {
 
           <label>Orientation</label>
           <input
+            name="left"
             className="qty"
-            onChange={getVariationRight}
+            onChange={getValues}
             id="left"
             placeholder="Orientation"
             type="text"
           />
           <input
             className="qty"
-            onChange={getVariationLeft}
+            onChange={getValues}
             id="right"
+            name="right"
             placeholder="Orientation"
             type="text"
           />
@@ -146,16 +166,17 @@ function Upload() {
           <label>Rating</label>
           <input
             className="qty"
-            onChange={getRating}
+            onChange={getValues}
             id="rating"
             placeholder="Rating"
-            type="number"
+            name="rating"
           />
           <br />
 
           <textarea
             id="productDescription"
-            onChange={getProductDescription}
+            name="description"
+            onChange={getValues}
             placeholder="Product Description..."
           />
 

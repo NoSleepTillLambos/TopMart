@@ -12,6 +12,10 @@ app.use(
   })
 );
 
+// MULTER IMAGE HANDLING
+app.use(express.static("productImages"));
+app.use("/productImages", express.static("productImages"));
+
 // MIDDLEWARE
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

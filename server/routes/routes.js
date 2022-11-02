@@ -6,6 +6,7 @@ const productSchema = require("../models/products");
 const UserSchema = require("../models/clients");
 const multer = require("multer");
 const path = require("path");
+const { json } = require("body-parser");
 
 // multer middleware
 const storedProductImage = multer.diskStorage({
@@ -20,12 +21,7 @@ const storedProductImage = multer.diskStorage({
 
 const uploadProductImage = multer({ storage: storedProductImage });
 
-////////////////////////////////////////////////////////////////// END OF MM ////////////////////////////////////////////
-const {
-  getOneProduct,
-  updateProduct,
-  deleteProduct,
-} = require("../controllers/productController");
+// END OF MULTER
 
 // POSTING A SINGLE PRODUCT
 router.post(
@@ -34,19 +30,18 @@ router.post(
   (req, res) => {
     // MULTER IMAGE HANDLING
     let data = JSON.parse(req.body.information);
-    console.log(req.file.filename);
 
-    // PRODUCT SCHEMA
+    // // PRODUCT SCHEMA
     const newProduct = new productSchema({
-      name: data.name,
-      price: data.price,
-      description: data.description,
-      rating: data.rating,
+      productName: data.productName,
+      productPrice: data.productPrice,
+      productDescription: data.productDescription,
+      productRating: data.productRating,
       variations: {
         right: data.variations.right,
         left: data.body.variations.left,
       },
-      image: data.file.filename,
+      image: req.file.filename,
     });
     newProduct
       .save()
@@ -97,12 +92,40 @@ router.post("/api/loginuser", async (req, res) => {
 });
 
 // GETTING ONE PRODUCT
-router.get("/api/oneproduct/:id", getOneProduct);
+router.get("/api/oneproduct/:id", async (req, res) => {
+  const findProduct = await productSchema.findById(req.params.id);
+
+  if (!findProduct) {
+    return res.status(404).json({ error: "Product does not exist" });
+  }
+  res.status(200).json(findProduct);
+});
 
 // DELETING PRODUCT
-router.delete("/api/deleteproduct/:id", deleteProduct);
+router.delete("/api/deleteproduct/:id", async (req, res) => {
+  const delProduct = await productSchema.remove({ _id: req.params.id });
+  res.json(delProduct);
+});
 
 // UPDATING PRODUCT
-router.patch("/api/updateproduct/:id", updateProduct);
+router.patch("/api/updateproduct/:id", async (req, res) => {
+  console.log(req.body);
+  const updateProduct = await productSchema.updateOne(
+    { _id: req.params.id },
+    {
+      $set: {
+        productName: data.productName,
+        productPrice: data.productPrice,
+        productDescription: data.productDescription,
+        productRating: data.productRating,
+        variations: {
+          right: data.variations.right,
+          left: data.body.variations.left,
+        },
+      },
+    }
+  );
+  res.json(updateProduct);
+});
 
 module.exports = router;
