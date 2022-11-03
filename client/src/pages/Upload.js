@@ -1,8 +1,6 @@
 import React from "react";
 import "../css/Upload.css";
 import { useState, useRef, useEffect } from "react";
-import { AiOutlineCloudUpload } from "react-icons/ai";
-import { IconContext } from "react-icons";
 import axios from "axios";
 import "../App.css";
 import { Button } from "@mui/material";
@@ -15,13 +13,12 @@ function Upload() {
   // RENDERING PRODUCTS ON CHANGE
   const [renderProducts, setRenderProducts] = useState();
 
-  const [productName, setProductName] = useState();
-  const [productPrice, setPrice] = useState();
-  const [productDescription, setProductDescription] = useState();
-  const [productImg, setProductImg] = useState();
-  const [productRating, setProductRating] = useState();
-  const [variationRight, setVariationRight] = useState();
-  const [variationLeft, setVariationLeft] = useState();
+  const productName = useRef(),
+    productDescription = useRef(),
+    productPrice = useRef(),
+    productRating = useRef(),
+    variationLeft = useRef(),
+    variationRight = useRef();
 
   const [imageName, setImageName] = useState("Please upload an image");
   const [productImage, setProductImage] = useState();
@@ -31,7 +28,6 @@ function Upload() {
       .get("http://localhost:5000/api/allProducts")
       .then((res) => {
         let productData = res.data;
-
         let URL = "http://localhost:5000/productImages/";
         let renderProducts = productData.map((item) => (
           <ProductCard
@@ -39,7 +35,7 @@ function Upload() {
             productId={item._id}
             productName={item.productName}
             productDescription={item.productDescription}
-            price={item.price}
+            productPrice={item.price}
             editRender={setRenderProducts}
           />
         ));
@@ -67,21 +63,6 @@ function Upload() {
 
     reader.readAsDataURL(e.target.files[0]);
   };
-  let defaultFormValues = [
-    "name",
-    "price",
-    "left",
-    "right",
-    "rating",
-    "description",
-  ];
-
-  const [formValues, setFormValues] = useState(defaultFormValues);
-
-  const getValues = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-  };
 
   const addProduct = (e) => {
     e.preventDefault();
@@ -89,14 +70,13 @@ function Upload() {
     const payloadData = new FormData();
 
     let payload = {
-      name: formValues["name"],
-      price: +formValues["price"],
-      description: formValues["description"],
-      // image: imageName,
-      rating: +formValues["rating"],
+      productName: productName.current.value,
+      productPrice: productPrice.current.value,
+      productDescription: productDescription.current.value,
+      productRating: productRating.current.value,
       variations: {
-        right: formValues["right"],
-        left: formValues["left"],
+        right: variationRight.current.value,
+        left: variationLeft.current.value,
       },
     };
 
@@ -113,7 +93,7 @@ function Upload() {
     document.getElementById("left").value = "";
     document.getElementById("rating").value = "";
     document.getElementById("productDescription").value = "";
-    document.getElementById("imgUpload").value = "";
+    document.getElementById("imgPrev").value = "";
   };
 
   return (
@@ -131,16 +111,14 @@ function Upload() {
         <p>{imageName}</p>
         <form onSubmit={addProduct}>
           <input
-            name="name"
             id="pName"
-            onChange={getValues}
+            ref={productName}
             placeholder="Product Name..."
             type="text"
           />
           <input
             id="price"
-            name="price"
-            onChange={getValues}
+            ref={productPrice}
             placeholder="price"
             type="number"
           />
@@ -149,19 +127,17 @@ function Upload() {
 
           <label>Orientation</label>
           <input
-            name="left"
             className="qty"
-            onChange={getValues}
-            id="left"
-            placeholder="Orientation"
+            ref={variationRight}
+            id="right"
+            placeholder="right"
             type="text"
           />
           <input
             className="qty"
-            onChange={getValues}
-            id="right"
-            name="right"
-            placeholder="Orientation"
+            ref={variationLeft}
+            id="left"
+            placeholder="left"
             type="text"
           />
           <br />
@@ -169,17 +145,16 @@ function Upload() {
           <label>Rating</label>
           <input
             className="qty"
-            onChange={getValues}
+            ref={productRating}
             id="rating"
             placeholder="Rating"
-            name="rating"
+            type="number"
           />
           <br />
 
           <textarea
             id="productDescription"
-            name="description"
-            onChange={getValues}
+            ref={productDescription}
             placeholder="Product Description..."
           />
 
