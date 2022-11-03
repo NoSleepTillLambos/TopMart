@@ -21,10 +21,10 @@ const productSchema = mongoose.Schema({
     right: { type: String, required: true },
     left: { type: String, required: true },
   },
-  // image: {
-  //   type: String,
-  //   required: true,
-  // },
+  image: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("products", productSchema);

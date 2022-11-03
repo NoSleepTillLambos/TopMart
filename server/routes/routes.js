@@ -39,7 +39,7 @@ router.post(
       productRating: data.productRating,
       variations: {
         right: data.variations.right,
-        left: data.body.variations.left,
+        left: data.variations.left,
       },
       image: req.file.filename,
     });

@@ -1,15 +1,19 @@
 import React from "react";
 import "../css/Upload.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import axios from "axios";
 import "../App.css";
 import { Button } from "@mui/material";
+import ProductCard from "../components/ProductCard";
 
 function Upload() {
   const [products, setProducts] = useState();
   const [updateProducts, setUpdateProducts] = useState(false);
+
+  // RENDERING PRODUCTS ON CHANGE
+  const [renderProducts, setRenderProducts] = useState();
 
   const [productName, setProductName] = useState();
   const [productPrice, setPrice] = useState();
@@ -22,30 +26,29 @@ function Upload() {
   const [imageName, setImageName] = useState("Please upload an image");
   const [productImage, setProductImage] = useState();
 
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:5000/api/allProducts")
-  //     .then((res) => {
-  //       let productData = res.data;
-  //       console.log(productData);
-  //       let URL = "http://localhost:5000/productImages/";
-  //       let renderProducts = productData.map((item) => (
-  //         <EditProductCard
-  //           key={item._id}
-  //           productId={item._id}
-  //           productName={item.productName}
-  //           productDescription={item.productDescription}
-  //           price={item.price}
-  //           stock={item.stock}
-  //            editRender = { setRenderProducts };
-  //         />
-  //       ));
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/allProducts")
+      .then((res) => {
+        let productData = res.data;
 
-  //       setProducts(renderProducts);
-  //       setUpdateProducts(false);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, [updateProducts]);
+        let URL = "http://localhost:5000/productImages/";
+        let renderProducts = productData.map((item) => (
+          <ProductCard
+            key={item._id}
+            productId={item._id}
+            productName={item.productName}
+            productDescription={item.productDescription}
+            price={item.price}
+            editRender={setRenderProducts}
+          />
+        ));
+
+        setProducts(renderProducts);
+        setUpdateProducts(false);
+      })
+      .catch((err) => console.log(err));
+  }, [updateProducts]);
 
   const getImageValue = (e) => {
     // where multer comes in
@@ -99,8 +102,7 @@ function Upload() {
 
     payloadData.append("information", JSON.stringify(payload));
     payloadData.append("image", productImage);
-    console.log(payload);
-    console.log(payloadData);
+
     axios.post("http://localhost:5000/api/newProduct", payloadData);
 
     // renders true after useffect
@@ -111,6 +113,7 @@ function Upload() {
     document.getElementById("left").value = "";
     document.getElementById("rating").value = "";
     document.getElementById("productDescription").value = "";
+    document.getElementById("imgUpload").value = "";
   };
 
   return (
@@ -126,7 +129,7 @@ function Upload() {
           <img id="imgPrev"></img>
         </div>
         <p>{imageName}</p>
-        <form>
+        <form onSubmit={addProduct}>
           <input
             name="name"
             id="pName"
@@ -181,7 +184,7 @@ function Upload() {
           />
 
           <br />
-          <Button onClick={addProduct}>Add Product!</Button>
+          <Button type="submit">Add Product!</Button>
         </form>
       </div>
       <div className="products"></div>

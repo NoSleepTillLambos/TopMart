@@ -81,3 +81,7 @@ p {
   width: 98px;
   background-color: #74bde0;
 }
+.display-products h3 {
+  text-align: center;
+  margin-top: 10px;
+}

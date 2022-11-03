@@ -1,0 +1,21 @@
+* {
+  font-family: "Raleway", sans-serif;
+}
+.productCon {
+  width: 100%;
+}
+.productCon h2 {
+  text-align: center;
+  margin-top: 50px;
+}
+.productCon hr {
+  width: 40%;
+  opacity: 0.6;
+  margin: auto;
+  margin-top: 20px;
+}
+.productCon h3 {
+  margin-top: 20px;
+  opacity: 0.8;
+  text-align: center;
+}

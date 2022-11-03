@@ -55,7 +55,7 @@ p {
   background-size: cover;
   background-image: url("./assets/titleits.jpg");
 }
-.imgPrev {
+#imgPrev {
   width: 100px;
   height: 100px;
   right: 24px;
@@ -67,7 +67,7 @@ p {
   background-color: #f7f7f7;
 }
 
-.imgPrev img {
+#imgPrev img {
   width: 100%;
 }
 

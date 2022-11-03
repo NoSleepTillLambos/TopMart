@@ -1,6 +1,10 @@
 .carousel {
   display: flex;
   justify-content: center;
+  opacity: 0.7;
+}
+.carousel:hover {
+  opacity: 1;
 }
 .carousel .slide {
   height: 60vh;
