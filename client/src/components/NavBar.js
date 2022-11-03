@@ -21,7 +21,7 @@ export default function NavBar() {
           Top Mart <img src={logo} alt="logo"></img>
         </Link>
         <ul>
-          <CustomLink to="/Product">Products</CustomLink>
+          <CustomLink to="/AllProducts">Products</CustomLink>
           <CustomLink to="/Upload">Upload Product</CustomLink>
           <CustomLink to="/SignUp">Sign Up</CustomLink>
           <div className="cart"></div>

@@ -94,11 +94,7 @@ router.post("/api/loginuser", async (req, res) => {
 // GETTING ONE PRODUCT
 router.get("/api/oneproduct/:id", async (req, res) => {
   const findProduct = await productSchema.findById(req.params.id);
-
-  if (!findProduct) {
-    return res.status(404).json({ error: "Product does not exist" });
-  }
-  res.status(200).json(findProduct);
+  res.json(findProduct);
 });
 
 // DELETING PRODUCT

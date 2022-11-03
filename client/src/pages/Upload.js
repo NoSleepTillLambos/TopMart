@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
 import { Button } from "@mui/material";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/SubComps/ProductCard";
 
 function Upload() {
   const [products, setProducts] = useState();
@@ -28,6 +28,7 @@ function Upload() {
       .get("http://localhost:5000/api/allProducts")
       .then((res) => {
         let productData = res.data;
+        console.log(productData);
         let URL = "http://localhost:5000/productImages/";
         let renderProducts = productData.map((item) => (
           <ProductCard
@@ -35,11 +36,11 @@ function Upload() {
             productId={item._id}
             productName={item.productName}
             productDescription={item.productDescription}
-            productPrice={item.price}
+            productPrice={item.productPrice}
+            image={URL + item.image}
             editRender={setRenderProducts}
           />
         ));
-
         setProducts(renderProducts);
         setUpdateProducts(false);
       })
@@ -100,6 +101,7 @@ function Upload() {
     <>
       <div className="display-products">
         <h3>Products currently on display: </h3>
+        {products}
       </div>
       <div className="AddProduct">
         <hr />

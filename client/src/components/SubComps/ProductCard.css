@@ -1,0 +1,24 @@
+.productCard {
+  width: 30%;
+  height: 45%;
+  margin-right: 10%;
+  border: 0.5px solid #74bde0;
+  border-radius: 5px;
+  color: white;
+  margin: 4%;
+}
+
+.cardInfo {
+  background-color: #74bde0;
+  height: 55%;
+}
+.productCard p {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+#cardImg {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  margin-left: 50px;
+}
