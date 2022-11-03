@@ -17,8 +17,7 @@ function Upload() {
     productDescription = useRef(),
     productPrice = useRef(),
     productRating = useRef(),
-    variationLeft = useRef(),
-    variationRight = useRef();
+    hand = useRef();
 
   const [imageName, setImageName] = useState("Please upload an image");
   const [productImage, setProductImage] = useState();
@@ -37,7 +36,9 @@ function Upload() {
             productName={item.productName}
             productDescription={item.productDescription}
             productPrice={item.productPrice}
+            productRating={item.productRating}
             image={URL + item.image}
+            hand={item.hand}
             editRender={setRenderProducts}
           />
         ));
@@ -75,10 +76,7 @@ function Upload() {
       productPrice: productPrice.current.value,
       productDescription: productDescription.current.value,
       productRating: productRating.current.value,
-      variations: {
-        right: variationRight.current.value,
-        left: variationLeft.current.value,
-      },
+      hand: hand.current.value,
     };
 
     payloadData.append("information", JSON.stringify(payload));
@@ -90,8 +88,7 @@ function Upload() {
     setUpdateProducts(true);
     document.getElementById("pName").value = "";
     document.getElementById("price").value = "";
-    document.getElementById("right").value = "";
-    document.getElementById("left").value = "";
+    document.getElementById("hand").value = "";
     document.getElementById("rating").value = "";
     document.getElementById("productDescription").value = "";
     document.getElementById("imgPrev").value = "";
@@ -105,7 +102,7 @@ function Upload() {
       </div>
       <div className="AddProduct">
         <hr />
-        Upload File
+        <h4 style={{ marginTop: "20px" }}>Upload File</h4>
         <input type="file" id="imgUpload" onChange={getImageValue} />
         <div className="imgPrev">
           <img id="imgPrev"></img>
@@ -130,20 +127,11 @@ function Upload() {
           <label>Orientation</label>
           <input
             className="qty"
-            ref={variationRight}
-            id="right"
-            placeholder="right"
+            ref={hand}
+            id="variations"
+            placeholder="hand"
             type="text"
           />
-          <input
-            className="qty"
-            ref={variationLeft}
-            id="left"
-            placeholder="left"
-            type="text"
-          />
-          <br />
-
           <label>Rating</label>
           <input
             className="qty"
@@ -161,7 +149,9 @@ function Upload() {
           />
 
           <br />
-          <Button type="submit">Add Product!</Button>
+          <Button type="submit" variant="contained">
+            Add Product!
+          </Button>
         </form>
       </div>
       <div className="products"></div>

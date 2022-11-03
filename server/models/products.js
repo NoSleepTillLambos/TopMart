@@ -17,9 +17,9 @@ const productSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  variations: {
-    right: { type: String, required: true },
-    left: { type: String, required: true },
+  hand: {
+    type: String,
+    required: true,
   },
   image: {
     type: String,

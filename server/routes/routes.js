@@ -37,10 +37,7 @@ router.post(
       productPrice: data.productPrice,
       productDescription: data.productDescription,
       productRating: data.productRating,
-      variations: {
-        right: data.variations.right,
-        left: data.variations.left,
-      },
+      hand: data.hand,
       image: req.file.filename,
     });
     newProduct
@@ -110,14 +107,11 @@ router.patch("/api/updateproduct/:id", async (req, res) => {
     { _id: req.params.id },
     {
       $set: {
-        productName: data.productName,
-        productPrice: data.productPrice,
-        productDescription: data.productDescription,
-        productRating: data.productRating,
-        variations: {
-          right: data.variations.right,
-          left: data.body.variations.left,
-        },
+        productName: req.body.productName,
+        productPrice: req.body.productPrice,
+        productDescription: req.body.productDescription,
+        productRating: req.body.productRating,
+        hand: req.body.hand,
       },
     }
   );

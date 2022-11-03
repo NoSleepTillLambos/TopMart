@@ -1,19 +1,25 @@
 .productCard {
   width: 30%;
   height: 45%;
-  margin-right: 10%;
+  margin-left: 2.6%;
+  margin-top: 3%;
   border: 0.5px solid #74bde0;
   border-radius: 5px;
   color: white;
-  margin: 4%;
-}
 
+  float: left;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#prodDesc {
+  font-size: x-small;
+}
 .cardInfo {
   background-color: #74bde0;
-  height: 55%;
+  height: 56%;
 }
 .productCard p {
-  margin-top: 5%;
+  margin-top: 3%;
   margin-left: 5%;
 }
 #cardImg {

@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 import "../css/individualClub.css";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 function IndividualClub(props) {
   const navigate = useNavigate();
@@ -20,7 +22,7 @@ function IndividualClub(props) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/oneproduct" + productId)
+      .get("http://localhost:5000/api/oneproduct/" + productId)
       .then((res) => {
         let data = res.data;
         setProductData({
@@ -44,9 +46,20 @@ function IndividualClub(props) {
   return (
     <>
       <div className="individualContainer">
-        <div className="productDetails">
-          <h2>{props.productName}</h2>
-          <img></img>
+        <div className="productContainer">
+          <img src={imgUrl} id="individualImg"></img>
+          <div className="productDetails">
+            <h2>{productData.productName}</h2>
+            <hr />
+            <h4>{productData.productDescription}</h4>
+            <h4>R{productData.productPrice}</h4>
+            <h5>{productData.productRating}</h5>
+
+            <Button type="submit" variant="contained" id="add-cart">
+              Add to cart{" "}
+              <AiOutlineShoppingCart style={{ marginLeft: "12px" }} />
+            </Button>
+          </div>
         </div>
       </div>
     </>
