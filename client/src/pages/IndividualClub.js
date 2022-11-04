@@ -16,8 +16,7 @@ function IndividualClub(props) {
     productPrice: "",
     productDescription: "",
     productRating: "",
-    variationLeft: "",
-    variationRight: "",
+    hand: "",
   });
 
   useEffect(() => {
@@ -30,8 +29,7 @@ function IndividualClub(props) {
           productPrice: +data.productPrice,
           productDescription: data.productDescription,
           productRating: +data.productRating,
-          variationLeft: data.variations.variationLeft,
-          variationRight: data.variations.variationRight,
+          hand: data.hand,
         });
         let URL = "http://localhost:5000/productImages/" + data.image;
         setImgUrl(URL);
@@ -46,7 +44,15 @@ function IndividualClub(props) {
   return (
     <>
       <div className="individualContainer">
+        <Button
+          variant="outlined"
+          onClick={back}
+          style={{ marginLeft: "20px", marginTop: "20px" }}
+        >
+          Back to products
+        </Button>
         <div className="productContainer">
+          <h5>{props.productId}</h5>
           <img src={imgUrl} id="individualImg"></img>
           <div className="productDetails">
             <h2>{productData.productName}</h2>
@@ -56,7 +62,7 @@ function IndividualClub(props) {
             <h5>{productData.productRating}</h5>
 
             <Button type="submit" variant="contained" id="add-cart">
-              Add to cart{" "}
+              Add to cart
               <AiOutlineShoppingCart style={{ marginLeft: "12px" }} />
             </Button>
           </div>

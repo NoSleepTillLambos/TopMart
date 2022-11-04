@@ -54,7 +54,7 @@ export default function SignUp() {
 
   return (
     <>
-      <div className="signIn-container">
+      <div className="signInCon">
         <div className="signIn">
           <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">

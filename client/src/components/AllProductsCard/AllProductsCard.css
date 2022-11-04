@@ -1,0 +1,16 @@
+.allProductsCard {
+  width: 15%;
+  height: 50%;
+  color: white;
+  margin-top: 3%;
+  border: 0.5px solid #74bde0;
+  border-radius: 5px;
+  float: left;
+  margin-right: 2%;
+  margin-left: 3%;
+}
+.allProductsCard #cardImg {
+  height: 180px;
+  width: 180px;
+  margin-left: 30px;
+}

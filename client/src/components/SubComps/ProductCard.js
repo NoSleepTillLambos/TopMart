@@ -76,9 +76,7 @@ function ProductCard(props) {
           </h3>
           <p>R{props.productPrice}</p>
           <p id="prodDesc">{props.productDescription}</p>
-          <MdGolfCourse
-            style={{ float: "right", marginTop: "-30px", marginRight: "10px" }}
-          />
+
           <p style={{ fontSize: "10px" }}>Rating: {props.productRating}</p>
           <p style={{ fontSize: "10px" }}>Hand: {props.variations}</p>
           <Button

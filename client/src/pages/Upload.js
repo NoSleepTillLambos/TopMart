@@ -91,7 +91,7 @@ function Upload() {
     document.getElementById("hand").value = "";
     document.getElementById("rating").value = "";
     document.getElementById("productDescription").value = "";
-    document.getElementById("imgPrev").value = "";
+    document.getElementById("imgPrev").src = "";
   };
 
   return (
@@ -128,7 +128,7 @@ function Upload() {
           <input
             className="qty"
             ref={hand}
-            id="variations"
+            id="hand"
             placeholder="hand"
             type="text"
           />

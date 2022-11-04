@@ -1,18 +1,18 @@
-.SignIn-container {
+.signInCon {
   background-image: url("../assets/titleist.png");
   background-position: center;
   background-size: cover;
   height: 86vh;
   background-color: black;
   width: 100%;
+  opacity: 0.8 #2b2b2b;
 }
 .signIn {
   background-color: white;
   height: 50vh;
   width: 50%;
   margin: auto;
-  border-radius: 8px;
-  opacity: 0.9;
+  border-radius: 5px;
   margin-left: 400px;
   position: fixed;
   margin-top: 100px;
