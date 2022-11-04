@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
 import { Button } from "@mui/material";
-import ProductCard from "../components/SubComps/ProductCard";
+import ProductCard from "../components/ProductCard/ProductCard";
 
 function Upload() {
   const [products, setProducts] = useState();

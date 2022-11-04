@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../SubComps/ProductCard.css";
+import "./ProductCard.css";
 import IndividualClub from "../../pages/IndividualClub";
 import { Button } from "@mui/material";
 import EditProductCard from "../EditProduct/EditProductCard";

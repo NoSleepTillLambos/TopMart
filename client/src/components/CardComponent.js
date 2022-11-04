@@ -10,7 +10,7 @@ import cobra from "../assets/cobra.jpg";
 import callaway from "../assets/callaway.jpg";
 import titelist from "../assets/titleist.png";
 
-export default function ImgMediaCard() {
+export default function ImgMediaCard(props) {
   return (
     <>
       <Card
@@ -24,7 +24,12 @@ export default function ImgMediaCard() {
       >
         <CardMedia component="img" alt="irons" height="190" image={logo} />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            sx={{ paddingLeft: "20px" }}
+          >
             Taylormade
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -32,7 +37,11 @@ export default function ImgMediaCard() {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" href="./AllProducts">
+          <Button
+            size="small"
+            href="./AllProducts"
+            sx={{ paddingLeft: "20px" }}
+          >
             View Clubs
           </Button>
         </CardActions>
@@ -43,7 +52,12 @@ export default function ImgMediaCard() {
       >
         <CardMedia component="img" alt="irons" height="190" image={callaway} />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            sx={{ paddingLeft: "20px" }}
+          >
             Callaway
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -51,7 +65,11 @@ export default function ImgMediaCard() {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" href="./AllProducts">
+          <Button
+            size="small"
+            href="./AllProducts"
+            sx={{ paddingLeft: "20px" }}
+          >
             View Clubs
           </Button>
         </CardActions>
@@ -62,7 +80,12 @@ export default function ImgMediaCard() {
       >
         <CardMedia component="img" alt="irons" height="190" image={cobra} />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            sx={{ paddingLeft: "20px" }}
+          >
             Cobra
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -70,26 +93,11 @@ export default function ImgMediaCard() {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" href="./AllProducts">
-            View Clubs
-          </Button>
-        </CardActions>
-      </Card>
-      <Card
-        sx={{ maxWidth: 290, height: 350, float: "left", marginLeft: "150px" }}
-        className="accessories-card"
-      >
-        <CardMedia component="img" alt="irons" height="190" image={titelist} />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Titleist
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            The latest to join the callaway army in taylormade
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small" href="./AllProducts">
+          <Button
+            size="small"
+            href="./AllProducts"
+            sx={{ paddingLeft: "20px" }}
+          >
             View Clubs
           </Button>
         </CardActions>
