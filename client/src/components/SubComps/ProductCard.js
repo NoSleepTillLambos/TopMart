@@ -78,7 +78,7 @@ function ProductCard(props) {
           <p id="prodDesc">{props.productDescription}</p>
 
           <p style={{ fontSize: "10px" }}>Rating: {props.productRating}</p>
-          <p style={{ fontSize: "10px" }}>Hand: {props.variations}</p>
+          <p style={{ fontSize: "10px" }}>Hand: {props.hand}</p>
           <Button
             variant="contained"
             style={{

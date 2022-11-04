@@ -32,7 +32,7 @@ export default function ImgMediaCard() {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" href="./Product">
+          <Button size="small" href="./AllProducts">
             View Clubs
           </Button>
         </CardActions>
@@ -51,7 +51,7 @@ export default function ImgMediaCard() {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" href="./Product">
+          <Button size="small" href="./AllProducts">
             View Clubs
           </Button>
         </CardActions>
@@ -70,7 +70,7 @@ export default function ImgMediaCard() {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" href="./Product">
+          <Button size="small" href="./AllProducts">
             View Clubs
           </Button>
         </CardActions>
@@ -89,7 +89,7 @@ export default function ImgMediaCard() {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" href="./Product">
+          <Button size="small" href="./AllProducts">
             View Clubs
           </Button>
         </CardActions>

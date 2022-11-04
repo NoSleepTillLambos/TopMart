@@ -46,8 +46,8 @@
   height: 50px;
   width: 50px;
 }
-.login {
-  background-image: url("../assets/login.png");
+.logout {
+  background-image: url("../assets/logout.png");
   height: 50px;
   width: 50px;
 }

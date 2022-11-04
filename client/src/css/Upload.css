@@ -73,6 +73,7 @@ form button {
   border: 0.5px solid #74bde0;
   margin-left: 20px;
   height: 80vh;
+  overflow: scroll;
 }
 p {
   margin-top: 2%;

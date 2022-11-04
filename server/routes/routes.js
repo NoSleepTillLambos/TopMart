@@ -79,7 +79,11 @@ router.post("/api/loginuser", async (req, res) => {
 
   if (findUser) {
     if (await bcrypt.compare(req.body.password, findUser.password)) {
-      res.json({ user: true });
+      res.json({
+        user: true,
+        username: findUser.username,
+        password: findUser.password,
+      });
     } else {
       res.json({ user: false });
     }

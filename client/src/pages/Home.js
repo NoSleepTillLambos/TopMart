@@ -16,10 +16,15 @@ function Home() {
         <p>We offer the top golfing products on the market today</p>
       </div>
       <div className="titleist-img"></div>
-      <div className="card-comps">
+      <div className="card-comps" style={{ paddingBottom: "80px" }}>
         <CardComponent />
       </div>
+
       <div className="cart-icon"></div>
+      <div className="homeFooter">
+        <hr />
+        <h3>&copy; Top Mart 2022</h3>
+      </div>
     </>
   );
 }

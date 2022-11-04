@@ -96,10 +96,7 @@ function Upload() {
 
   return (
     <>
-      <div className="display-products">
-        <h3>Products currently on display: </h3>
-        {products}
-      </div>
+      <div className="display-products">{products}</div>
       <div className="AddProduct">
         <hr />
         <h4 style={{ marginTop: "20px" }}>Upload File</h4>

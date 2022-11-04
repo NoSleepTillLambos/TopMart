@@ -40,15 +40,24 @@ export default function SignUp() {
         if (res.data.user) {
           sessionStorage.setItem("username", res.data.username);
           let admin = sessionStorage.getItem("username");
-          console.log(admin);
           alert("Welcome");
           navigate("/Upload");
+          if (admin === "Admin") {
+            navigate("/Upload");
+          } else if (
+            admin === "" ||
+            admin === null ||
+            admin === undefined ||
+            admin === false
+          ) {
+            navigate("/AllProducts");
+          }
         } else {
-          alert("not happening");
+          alert("Incorrect username or password");
         }
       })
-      .catch(function (err) {
-        console.log(err);
+      .catch(function (error) {
+        console.log(error);
       });
   };
 

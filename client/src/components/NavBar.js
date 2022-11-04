@@ -7,6 +7,7 @@ import { useState } from "react";
 import Logout from "./LogoutModal";
 
 export default function NavBar() {
+  const styles = { backgroundColor: "white" };
   const path = window.location.pathname;
 
   const [logoutModal, setLogoutModal] = useState();
@@ -25,6 +26,7 @@ export default function NavBar() {
           <CustomLink to="/Upload">Upload Product</CustomLink>
           <CustomLink to="/SignUp">Sign Up</CustomLink>
           <div className="cart"></div>
+          <div className="logout"></div>
         </ul>
       </nav>
       {cartModal}

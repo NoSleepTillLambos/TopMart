@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import "../css/individualClub.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { Rating } from "@mui/material";
 
 function IndividualClub(props) {
   const navigate = useNavigate();
@@ -41,6 +42,44 @@ function IndividualClub(props) {
     navigate("/AllProducts");
   };
 
+  // ADDING ITEMS TO CART
+
+  const addToCart = () => {
+    let cart = sessionStorage.getItem("cart");
+    let user = sessionStorage.getItem("username");
+
+    if (user === "" || user === null) {
+      alert("Please login first.");
+      navigate("/SignIn");
+    } else {
+      let cartArray = [];
+
+      if (cart === "" || cart === null) {
+        let addProductToCart = {
+          name: productData.productName,
+          img: imgUrl,
+          price: productData.price,
+          id: productId,
+          qty: 1,
+        };
+
+        cartArray.push(addProductToCart);
+        sessionStorage.setItem("cart", JSON.stringify(cartArray));
+      } else {
+        let addProductToCart = {
+          name: productData.productName,
+          img: imgUrl,
+          price: productData.price,
+          id: productId,
+          qty: 1,
+        };
+
+        cartArray.push(addProductToCart);
+        sessionStorage.setItem("cart", JSON.stringify(cartArray));
+      }
+    }
+  };
+
   return (
     <>
       <div className="individualContainer">
@@ -57,11 +96,23 @@ function IndividualClub(props) {
           <div className="productDetails">
             <h2>{productData.productName}</h2>
             <hr />
+            <h5>Rate our product:</h5>
+            <Rating
+              name="half-rating"
+              defaultValue={2.5}
+              precision={0.5}
+              style={{ marginLeft: "100px", paddingTop: "20px" }}
+            />
             <h4>{productData.productDescription}</h4>
             <h4>R{productData.productPrice}</h4>
             <h5>{productData.productRating}</h5>
 
-            <Button type="submit" variant="contained" id="add-cart">
+            <Button
+              type="submit"
+              variant="contained"
+              id="add-cart"
+              onClick={addToCart}
+            >
               Add to cart
               <AiOutlineShoppingCart style={{ marginLeft: "12px" }} />
             </Button>

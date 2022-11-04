@@ -22,10 +22,10 @@
 }
 .footer {
   padding-top: 100px;
-  height: 30vh;
+  height: 35vh;
   width: 100%;
   background-color: #2b2b2b;
-  margin-top: 800px;
+  margin-top: 100px;
   color: white;
 }
 .footer h3 {
@@ -36,4 +36,6 @@
 }
 .footer hr {
   width: 95%;
+  margin-top: 70px;
+  border: 1px solid white;
 }
