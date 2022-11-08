@@ -1,0 +1,31 @@
+.checkoutModal {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  z-index: 99999;
+  padding-top: 10vh;
+  top: 0;
+  left: 0;
+}
+.checkoutModal .innerCon {
+  border-radius: 5px;
+  width: 60%;
+  height: 90%;
+  margin: auto;
+  padding: 3%;
+}
+.checkoutModal .innerCon h2 {
+  color: black;
+  text-align: center;
+}
+#checkoutLogo {
+  background-color: #74bde0;
+  border-radius: 5px;
+}
+#ozow {
+  width: 100px;
+  display: block;
+  margin: auto;
+  margin-top: 15%;
+}

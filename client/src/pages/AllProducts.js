@@ -5,6 +5,8 @@ import AllProductsCard from "../components/AllProductsCard/AllProductsCard";
 import { useState, useEffect } from "react";
 
 function Product(props) {
+  //search functionality
+  const [searchTerm, setSearchTerm] = useState("");
   const [renderProducts, setRenderProducts] = useState(false);
   const [products, setProducts] = useState();
   useEffect(() => {
@@ -38,6 +40,14 @@ function Product(props) {
         <h2>New releases</h2>
         <hr />
         <h3>Browse our latest releases and new products</h3>
+        <input
+          type="text"
+          placeholder="Search our products..."
+          id="searchBar"
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+          }}
+        />
         <div>{products}</div>
       </div>
       {/* footer element */}

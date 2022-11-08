@@ -9,6 +9,14 @@
   margin-right: 2%;
   margin-left: 3%;
 }
+#prodDescription {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.allProductsCard p {
+  padding-left: 4%;
+}
 .allProductsCard #cardImg {
   height: 180px;
   width: 180px;

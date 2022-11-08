@@ -20,8 +20,8 @@ function EmptyCart() {
   };
   return (
     <>
-      <div style={{ width: "100%" }}>
-        <h2 style={{ textAlign: "center", marginTop: "180px" }}>
+      <div style={{ width: "100%", marginBottom: "5%" }}>
+        <h2 style={{ textAlign: "center", marginTop: "80px" }}>
           There is nothing in your cart at the moment...
         </h2>
         <Button

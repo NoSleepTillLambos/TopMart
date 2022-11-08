@@ -11,6 +11,7 @@ function EditProductCard(props) {
     backgroundColor: "black",
     padding: "-40px",
   };
+
   let editFormValues = {
     productName: props.productName,
     productPrice: props.productPrice,

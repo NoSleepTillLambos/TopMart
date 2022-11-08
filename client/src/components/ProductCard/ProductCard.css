@@ -9,9 +9,12 @@
   float: left;
   overflow: hidden;
   white-space: nowrap;
+  max-height: 47%;
 }
 #prodDesc {
   font-size: x-small;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .cardInfo {
   background-color: #74bde0;

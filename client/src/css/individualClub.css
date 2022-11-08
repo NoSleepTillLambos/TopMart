@@ -25,6 +25,7 @@
 .productDetails h4 {
   margin-left: 100px;
   margin-top: 30px;
+  padding-right: 3%;
   opacity: 0.7;
 }
 .productDetails h5 {
@@ -44,5 +45,5 @@ hr {
 #add-cart {
   bottom: 0;
   margin-left: 100px;
-  margin-top: 100px;
+  margin-top: 3%;
 }

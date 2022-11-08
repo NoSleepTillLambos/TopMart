@@ -27,7 +27,7 @@ function AllProductsCard(props) {
             {props.productName}
           </h3>
           <p>R{props.productPrice}</p>
-          <p id="prodDesc">{props.productDescription}</p>
+          <p id="prodDescription">{props.productDescription}</p>
 
           <p>Rating: {props.productRating}</p>
           <p>Hand: {props.variations}</p>

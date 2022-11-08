@@ -55,7 +55,7 @@ function IndividualClub(props) {
       let cartArray = [];
 
       if (cart === "" || cart === null) {
-        let addProductToCart = {
+        let addToCart = {
           name: productData.productName,
           img: imgUrl,
           price: productData.price,
@@ -63,10 +63,10 @@ function IndividualClub(props) {
           qty: 1,
         };
 
-        cartArray.push(addProductToCart);
+        cartArray.push(addToCart);
         sessionStorage.setItem("cart", JSON.stringify(cartArray));
       } else {
-        let addProductToCart = {
+        let addToCart = {
           name: productData.productName,
           img: imgUrl,
           price: productData.productPrice,
@@ -74,7 +74,7 @@ function IndividualClub(props) {
           qty: 1,
         };
 
-        cartArray.push(addProductToCart);
+        cartArray.push(addToCart);
         sessionStorage.setItem("cart", JSON.stringify(cartArray));
       }
     }

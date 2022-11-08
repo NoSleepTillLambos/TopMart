@@ -4,6 +4,7 @@ import { Button } from "@mui/material";
 import { useState, useEffect } from "react";
 import CartComponent from "../components/Cart/CartComponent";
 import EmptyCart from "../components/EmptyCart/EmptyCart";
+import "../css/cartPage.css";
 
 function CartPage(props) {
   let cartItem = JSON.parse(sessionStorage.getItem("cart"));
@@ -51,6 +52,22 @@ function CartPage(props) {
         <hr style={{ marginBottom: "30px" }} />
         {noItems}
         {cart}
+      </div>
+      <div className="cartFooter">
+        <p>Terms and conditions</p>
+        <p>
+          <a
+            href="malito: sales@topmart.co.za"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Contact us
+          </a>
+        </p>
+        <p>Privacy policy</p>
+        <p>Payment options</p>
+        <p>Delivery options</p>
+        <hr />
+        <h3>&copy; Top Mart 2022</h3>
       </div>
     </>
   );
