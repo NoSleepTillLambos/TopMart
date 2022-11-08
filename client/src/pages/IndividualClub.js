@@ -69,7 +69,7 @@ function IndividualClub(props) {
         let addProductToCart = {
           name: productData.productName,
           img: imgUrl,
-          price: productData.price,
+          price: productData.productPrice,
           id: productId,
           qty: 1,
         };

@@ -46,13 +46,11 @@ function CartPage(props) {
   return (
     <>
       <div style={{ width: "100%" }}>
-        <h2 style={{ textAlign: "center", paddingTop: "40px" }}>Your cart</h2>
+        <h2 style={{ textAlign: "center", padding: "20px" }}>Your cart</h2>
+
         <hr style={{ marginBottom: "30px" }} />
         {noItems}
         {cart}
-        <Button variant="outlined" onClick={back}>
-          Back to products
-        </Button>
       </div>
     </>
   );
