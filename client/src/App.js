@@ -6,6 +6,7 @@ import Upload from "./pages/Upload";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import { Routes, Route } from "react-router-dom";
+import CartPage from "./pages/CartPage";
 import IndividualClub from "./pages/IndividualClub";
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/AllProducts" element={<AllProducts />} />
+          <Route path="/CartPage" element={<CartPage />} />
           <Route path="/IndividualClub" element={<IndividualClub />} />
         </Routes>
       </div>

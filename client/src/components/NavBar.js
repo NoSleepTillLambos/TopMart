@@ -1,19 +1,26 @@
 import "../css/NavBar.css";
 import logo from "../assets/logo.png";
 import { Children } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMatch, useResolvedPath } from "react-router-dom";
 import { useState } from "react";
-import Logout from "./LogoutModal";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { FiLogOut } from "react-icons/fi";
 
 export default function NavBar() {
-  const styles = { backgroundColor: "white" };
+  const navigate = useNavigate();
+
+  const styles = { fontSize: "1.5rem" };
   const path = window.location.pathname;
 
   const [logoutModal, setLogoutModal] = useState();
   const [cartModal, setCartModal] = useState();
 
-  let activeUser = sessionStorage.getItem("name");
+  let activeUser = sessionStorage.getItem("username");
+
+  const toCart = () => {
+    navigate("/CartPage");
+  };
 
   return (
     <>
@@ -24,9 +31,12 @@ export default function NavBar() {
         <ul>
           <CustomLink to="/AllProducts">Products</CustomLink>
           <CustomLink to="/Upload">Upload Product</CustomLink>
-          <CustomLink to="/SignUp">Sign Up</CustomLink>
-          <div className="cart"></div>
-          <div className="logout"></div>
+          <CustomLink to="/SignUp">
+            <FiLogOut to="/SignUp" style={styles} id="logoutText" />
+          </CustomLink>
+          <CustomLink to="/CartPage">
+            <AiOutlineShoppingCart style={styles} />
+          </CustomLink>
         </ul>
       </nav>
       {cartModal}

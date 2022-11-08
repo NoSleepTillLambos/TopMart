@@ -34,20 +34,11 @@
   padding: 0.8rem;
 }
 .nav li.active {
-  background-color: #555;
+  background-color: #2b2b2b;
+  border-radius: 5px;
 }
 .nav li:hover {
   background-color: #74bde0;
   border-radius: 20px;
   opacity: 0.3;
-}
-.cart {
-  background-image: url("../assets/Group76.png");
-  height: 50px;
-  width: 50px;
-}
-.logout {
-  background-image: url("../assets/logout.png");
-  height: 50px;
-  width: 50px;
 }

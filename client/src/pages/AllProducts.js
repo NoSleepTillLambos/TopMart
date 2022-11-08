@@ -42,6 +42,11 @@ function Product(props) {
       </div>
       {/* footer element */}
       <div className="footer">
+        <p>Terms and conditions</p>
+        <p>Contact us</p>
+        <p>Privacy policy</p>
+        <p>Payment options</p>
+        <p>Delivery options</p>
         <hr />
         <h3>&copy; Top Mart 2022</h3>
       </div>

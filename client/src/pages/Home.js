@@ -11,31 +11,33 @@ function Home(props) {
   const [renderProducts, setRenderProducts] = useState(false);
   const [products, setProducts] = useState();
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/allProducts")
-      .then((res) => {
-        let productData = res.data;
-        let URL = "http://localhost:5000/productImages/";
-        let renderProducts = productData.map(
-          (item, idx) =>
-            idx < 5 && (
-              <AllProductsCard
-                key={item._id}
-                productId={item._id}
-                productName={item.productName}
-                productDescription={item.productDescription}
-                productPrice={item.productPrice}
-                productRating={item.productRating}
-                image={URL + item.image}
-                hand={item.hand}
-                editRender={props.setRenderProducts}
-              />
-            )
-        );
-        setProducts(renderProducts);
-        setRenderProducts(false);
-      })
-      .catch((err) => console.log(err));
+    setTimeout(() => {
+      axios
+        .get("http://localhost:5000/api/allProducts")
+        .then((res) => {
+          let productData = res.data;
+          let URL = "http://localhost:5000/productImages/";
+          let renderProducts = productData.map(
+            (item, idx) =>
+              idx < 5 && (
+                <AllProductsCard
+                  key={item._id}
+                  productId={item._id}
+                  productName={item.productName}
+                  productDescription={item.productDescription}
+                  productPrice={item.productPrice}
+                  productRating={item.productRating}
+                  image={URL + item.image}
+                  hand={item.hand}
+                  editRender={props.setRenderProducts}
+                />
+              )
+          );
+          setProducts(renderProducts);
+          setRenderProducts(false);
+        })
+        .catch((err) => console.log(err));
+    }, 1000);
   }, [renderProducts]);
   return (
     <>
@@ -48,17 +50,29 @@ function Home(props) {
           <br />
           <p>We offer the top golfing products on the market today</p>
           <div style={{ marginTop: "-120px" }}>
-            <CardComponent style={{ marginTop: "-100px" }} />
+            <CardComponent style={{ marginTop: "-150px" }} />
           </div>
         </div>
 
         <div className="latestProds">
-          <h3>Our latest products on the market</h3>
+          <h3>Our latest product listings</h3>
           <hr style={{ marginTop: "20px" }} />
           {products}
         </div>
 
         <div className="homeFooter">
+          <p>Terms and conditions</p>
+          <p>
+            <a
+              href="malito: sales@topmart.co.za"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              Contact us
+            </a>
+          </p>
+          <p>Privacy policy</p>
+          <p>Payment options</p>
+          <p>Delivery options</p>
           <hr />
           <h3>&copy; Top Mart 2022</h3>
         </div>
