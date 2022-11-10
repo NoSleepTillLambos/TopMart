@@ -59,7 +59,7 @@
 
 <!-- header image of project -->
 
-![image1][image1]
+![image1](client/src/assets/homeScreen.png)
 
 ### Project Description
 
