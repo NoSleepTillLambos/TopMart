@@ -131,9 +131,9 @@ A large portion of conceptualization came from websites such as the Pro Shop and
 
 ### Ideation
 
-![image4](src/assets/wireframe1.png)
-![image5](src/assets/wireframe2.png)
-![image6](src/assets/wireframe3.png)
+![image4](client/src/assets/wireframe1.png)
+![image5](client/src/assets/wireframe2.png)
+![image6](client/src/assets/wireframe3.png)
 
 ### Custom UI
 
