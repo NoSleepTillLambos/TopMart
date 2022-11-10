@@ -51,7 +51,7 @@ function CheckoutModal(props) {
           >
             Place order
           </Button>
-          <p>Total : {props.price}</p>
+
           <img src={ozow} id="ozow"></img>
         </div>
       </div>

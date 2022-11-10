@@ -66,7 +66,7 @@
 
 ### Project Description
 
-Algo crypt is a crpyto currency web application designed to provide users with the ability to analyse various price points and historical data about the top 5 by market cap.
+An Ecommerce website built using the MERN stack (MongoDB, Express.js, ReactJs and Node). The project has been centred around golf clubs and allows users to browse,search and finally add products to their carts where they can then proceed to checkout.
 
 ### Built With
 
@@ -92,13 +92,13 @@ Ensure that you have the latest version of [NPM](https://www.npmjs.com/) install
 Here are a couple of ways to clone this repo:
 
 1.  GitHub Desktop </br>
-    Enter `https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project` into the URL field and press the `Clone` button.
+    Enter `https://github.com/NoSleepTillLambos/TopMart` into the URL field and press the `Clone` button.
 
 2.  Clone Repository </br>
     Run the following in the command-line to clone the project:
 
     ```sh
-    git clone https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project
+    git clone https://github.com/NoSleepTillLambos/TopMart
     ```
 
         Open `Software` and select `File | Open...` from the menu. Select cloned directory and press `Open` button
@@ -125,10 +125,9 @@ Here are a couple of ways to clone this repo:
 
 The features of this page include a dougnut chart, a bar graph displaying the market cap of the crpytocurrency's in question and finally a polar area graph displaying the total market caps
 
-![image4][src/Assets/4926360.png]
+![image4][src/assets/4926360.png]
 
 ### Feature 3
-
 
 <!-- CONCEPT PROCESS -->
 <!-- Briefly explain your concept ideation process -->
@@ -140,10 +139,9 @@ Before beginnig to write the code in my project i went over to pinterest and wen
 
 ### Ideation
 
-
 ### Custom UI
 
-The custom UI I made use of was provided by Coinponent, the UI sits at the top of my web application and provides the user with market movement and updates surronding eh bitcoin ecosystem 
+The custom UI I made use of was provided by Coinponent, the UI sits at the top of my web application and provides the user with market movement and updates surronding eh bitcoin ecosystem
 
 <!-- DEVELOPMENT PROCESS -->
 
