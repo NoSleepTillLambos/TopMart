@@ -14,7 +14,7 @@
 <p align="center">
 
   <a href="https://github.com/NoSleepTillLambos/TopMart">
-    <img src="src/assets/logo.png" alt="Logo" width="140" height="140">
+    <img src="client/src/assets/logo.png" alt="Logo" width="140" height="140">
   </a>
   
   <h3 align="center">Top Mart</h3>
@@ -117,7 +117,7 @@ Here are a couple of ways to clone this repo:
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
 
-![image2](src/assets/homeScreen.png)
+![image2](client/src/assets/homeScreen.png)
 
 ### Feature 2
 
@@ -156,11 +156,11 @@ A large portion of the UI was developed using Material UI, such as the buttons a
 
 ### Mockups
 
-![image2](src/assets/individualClub.png)
+![image2](client/src/assets/individualClub.png)
 <br>
-![image3](src/assets/cartPage.png)
-![image4](src/assets/checkout.png)
-![image5](src/assets/adminPage.png)
+![image3](client/src/assets/cartPage.png)
+![image4](client/src/assets/checkout.png)
+![image5](client/src/assets/adminPage.png)
 
 <!-- VIDEO DEMONSTRATION -->
 
