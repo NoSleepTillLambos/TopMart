@@ -9,25 +9,25 @@
 <!-- HEADER SECTION -->
 <h5 align="center" style="padding:0;margin:0;">Liam Wedge</h5>
 <h5 align="center" style="padding:0;margin:0;">21100218</h5>
-<h6 align="center">DV200 - Term 1 Project | 2022</h6>
+<h6 align="center">DV200 - Term 3 Project | 2022</h6>
 </br>
 <p align="center">
 
-  <a href="https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project">
-    <img src="public/unnamed.jpg" alt="Logo" width="140" height="140">
+  <a href="https://github.com/NoSleepTillLambos/TopMart">
+    <img src="src/assets/logo.png" alt="Logo" width="140" height="140">
   </a>
   
-  <h3 align="center">Algo crypt</h3>
+  <h3 align="center">Top Mart</h3>
 
   <p align="center">
-    A react project using the CoinLore API to explore the abilities of and data visualization of charts js  <br>
+    A E-commerce website built by an aspiring full stack developer with a love for golf<br>
     
     
    <br />
    <br />
    <a href="https://drive.google.com/drive/folders/1IiMC4ZpDRhs8Q5RuAk9rlZmzaHfeihNa">View Demo</a>
     ·
-    <a href="https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project/issues">Report Bug</a>
+    <a href="https://github.com/NoSleepTillLambos/TopMart/issues">Report Bug</a>
     ·
     
 </p>
@@ -35,9 +35,9 @@
 
 ## Table of Contents
 
-- [About the Project](The project is centred around the cryptocurrency ecosystem and was run and developed through the use of REACT JS and was)
-  - [Project Description](The application allows users to explore charts and prices from the various top market cap currencies)
-  - [Built With](React JS, Material UI, Coinlore(API), CoinPonent)
+- [About the Project]
+  - [Project Description]
+  - [Built With](MERN, Mongoose, Nodemon)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [How to install](#how-to-install)
@@ -47,10 +47,7 @@
   - [Wireframes](#wireframes)
   - [Custom UI](#user-flow)
 - [Development Process](#development-process)
-  - [Implementation Process](#implementation-process) - [Highlights](The highlight was seeing all the plans come together with regards to the Ui and finally getting the API to work with the charts) - [Challenges](My greatest challenge this term was getting familiar with React syntax, it proved to be a real pain in the beginning.
-    Axios and getting data from the api
-    Time management proved to be an issue towards the end and something i need to work on in the following weeks and months to maximise my productivity
-    )
+  - [Implementation Process](#implementation-process)
   - [Future Implementation](#peer-reviews)
 - [Final Outcome](#final-outcome)
   - [Mockups](#mockups)
@@ -66,13 +63,14 @@
 
 ### Project Description
 
-An Ecommerce website built using the MERN stack (MongoDB, Express.js, ReactJs and Node). The project has been centred around golf clubs and allows users to browse,search and finally add products to their carts where they can then proceed to checkout.
+An E-commerce website built using the MERN stack (MongoDB, Express.js, ReactJs and Node). The project has been centred around golf clubs and allows users to browse,search and finally add products to their carts where they can then proceed to checkout.
 
 ### Built With
 
 - [React](https://reactjs.org/)
-- [CoinLore](https://www.coinlore.com/cryptocurrency-data-api)
 - [Material UI V4](https://v4.mui.com/)
+- [Node](https://nodejs.org/en/)
+- [MERN](https://www.mongodb.com/mern-stack)
 
 <!-- GETTING STARTED -->
 <!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
@@ -119,80 +117,38 @@ Here are a couple of ways to clone this repo:
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
 
-![image2](src/Assets/Liam_Wedge_21100218_HomePage.png)
+![image2](src/Assets/homeScreen.png)
 
 ### Feature 2
 
-The features of this page include a dougnut chart, a bar graph displaying the market cap of the crpytocurrency's in question and finally a polar area graph displaying the total market caps
+Users can browse and view products, descriptions regarding prices and club orientations have been included to make the buyers life a little easier
 
-![image4][src/assets/4926360.png]
-
-### Feature 3
-
-<!-- CONCEPT PROCESS -->
-<!-- Briefly explain your concept ideation process -->
-<!-- here you will add things like wireframing, data structure planning, anything that shows your process. You need to include images-->
+![image4](src/assets/allProducts.png)
 
 ## Concept Process
 
-Before beginnig to write the code in my project i went over to pinterest and went through some of the best looking websites regarding my chosen data set and with regards to meeeting the briefs requirements.
+A large portion of conceptualization came from websites such as the Pro Shop and The Golfers club, it allowed me to narrow down certain features and include only the necessary features within my site while keeping it clean and user friendly. With a major focus on user interface and user experience.
 
 ### Ideation
 
+![image4](src/Assets/wireframe1.png)
+![image5](src/Assets/wireframe2.png)
+![image6](src/Assets/wireframe3.png)
+
 ### Custom UI
 
-The custom UI I made use of was provided by Coinponent, the UI sits at the top of my web application and provides the user with market movement and updates surronding eh bitcoin ecosystem
+A large portion of the UI was developed using Material UI, such as the buttons and other home components (the cards and other display related features)
 
 <!-- DEVELOPMENT PROCESS -->
-
-## Development Process
-
-Users are able to cycle through various currencies on the comparison and timeline page and display data about the various object properties all with help of the Coinlore API.
 
 ### Implementation Process
 
 <!-- stipulate all of the functionality you included in the project -->
 <!-- This is your time to shine, explain the technical nuances of your project, how did you achieve the final outcome!-->
 
-- Utilized React `Charts.JS` dependency for Data visualization
-- Implemented Routing with `React-Router v6`.
-- API End Point: https://api.coinlore.net/api/global/
-- Ticker and plugins were achieved with the help of: https://coinponent.com/crypto-converter-widget
-- ETC.
-
-#### Highlights
-
-<!-- stipulated the highlight you experienced with the project -->
-
-- The highlight for me was getting familiar with JSX and the other react syntax, it proved to be challenging but extremely
-  worthwhile when everything came together.
-- I really enjoyed working with Chart js even though it proved to be an issue throughout, i really enjoyed the data visualization aspect.
-
-#### Challenges
-
-<!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
-
-- The biggest challenge for me was the dynamic population of data into the Charts, however I learnt quickly and was able to overcome
-  the issues.
-- There were a large amount of bugs that kept me awake most nights, mainly due to the syntax in React.
-
-#### Above And Beyond
-
-Going above and beyond the brief
-
-<!-- what did you learn outside of the classroom and implement into your project-->
-
-- I explored the use of Material UI as a way to implement a cleaner and more visually appealing front end .
-- Through the use of Coinponent I implemented a coin ticker bar.
-- Explain your understanding and execution of above skill.
-
-### Future Implementation
-
-<!-- stipulate functionality and improvements that can be implemented in the future. -->
-
-- In the future i would like to get my timeline page fully functioning as i was not quite able to complete it due to time restrictions
-- I would like to actually implement a way for users to access the blockchain (I'm aiming high) through my website and possibly even
-  make transactions, who knows :).
+- Schema development
+- Route and backend connections
+- Front and backend connection
 
 <!-- MOCKUPS -->
 
@@ -200,9 +156,11 @@ Going above and beyond the brief
 
 ### Mockups
 
-![image2](src/Assets/Liam_Wedge_21100218_Mockup.png)
+![image2](src/Assets/individualClub.png)
 <br>
-![image2](src/Assets/4926360.png)
+![image3](src/Assets/cartPage.png)
+![image4](src/Assets/checkout.png)
+![image5](src/Assets/adminPage.png)
 
 <!-- VIDEO DEMONSTRATION -->
 
@@ -210,7 +168,7 @@ Going above and beyond the brief
 
 To see a run through of the application, please click below:
 
-[View Demonstration](https://drive.google.com/drive/folders/1IiMC4ZpDRhs8Q5RuAk9rlZmzaHfeihNa)
+[View Demonstration](https://drive.google.com/drive/folders/1bHFGq7nIGPdDqJGrCNNCiSqTUyPk-h7F)
 
 See the [open issues](https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project/issues) for a list of proposed features (and known issues).
 
@@ -218,7 +176,7 @@ See the [open issues](https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV
 
 ## Authors
 
-- **Your Name & Surname** - [LiamWedge](https://github.com/NoSleepTillLambos)
+- **Liam Wedge** - [LiamWedge](https://github.com/NoSleepTillLambos)
 
 <!-- LICENSE -->
 
