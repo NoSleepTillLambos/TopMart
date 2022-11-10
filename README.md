@@ -117,7 +117,7 @@ Here are a couple of ways to clone this repo:
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
 
-![image2](src/Assets/homeScreen.png)
+![image2](src/assets/homeScreen.png)
 
 ### Feature 2
 
@@ -131,9 +131,9 @@ A large portion of conceptualization came from websites such as the Pro Shop and
 
 ### Ideation
 
-![image4](src/Assets/wireframe1.png)
-![image5](src/Assets/wireframe2.png)
-![image6](src/Assets/wireframe3.png)
+![image4](src/assets/wireframe1.png)
+![image5](src/assets/wireframe2.png)
+![image6](src/assets/wireframe3.png)
 
 ### Custom UI
 
@@ -156,11 +156,11 @@ A large portion of the UI was developed using Material UI, such as the buttons a
 
 ### Mockups
 
-![image2](src/Assets/individualClub.png)
+![image2](src/assets/individualClub.png)
 <br>
-![image3](src/Assets/cartPage.png)
-![image4](src/Assets/checkout.png)
-![image5](src/Assets/adminPage.png)
+![image3](src/assets/cartPage.png)
+![image4](src/assets/checkout.png)
+![image5](src/assets/adminPage.png)
 
 <!-- VIDEO DEMONSTRATION -->
 
@@ -188,8 +188,8 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 
 ## Contact
 
-- **Liam Wedge** - [21100218@virtualwindow.co.za]()
-- **Project Link** - https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project
+- **Liam Wedge** - [liamwedge00@gmail.com]
+- **Project Link** - https://github.com/NoSleepTillLambos/TopMart
 
 <!-- ACKNOWLEDGEMENTS -->
 
@@ -197,8 +197,8 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 
 <!-- all resources that you used and Acknowledgements here -->
 
-- [Coinlore API](https://www.coinlore.com/cryptocurrency-data-api)
-- [Coinponent](https://coinponent.com/crypto-converter-widget)
-- [React](https://reactjs.org/)
-- [Material UI](https://v4.mui.com/)
-- [Charts JS](https://www.chartjs.org/)
+- [Pro Shop](https://www.theproshop.co.za/)
+- [Golfers club](https://www.golfersclub.co.za/)
+- [MERN stack](https://www.mongodb.com/mern-stack)
+- [Nodemon](https://www.npmjs.com/package/nodemon)
+- [Mongoose](https://mongoosejs.com/)
