@@ -17,7 +17,7 @@ function EditProductCard(props) {
     productPrice: props.productPrice,
     productDescription: props.productDescription,
     productRating: props.productRating,
-    hand: props.hand,
+    productHand: props.hand,
   };
 
   const [editValues, setEditValues] = useState(editFormValues);
@@ -36,7 +36,7 @@ function EditProductCard(props) {
       .patch("http://localhost:5000/api/updateproduct/" + productId, editValues)
       .then((res) => {
         if (res) {
-          console.log("item updated");
+          console.log("item: " + productId + "has been updated");
           props.close();
           props.editRender(true);
         }
@@ -56,7 +56,7 @@ function EditProductCard(props) {
         <div className="innerCon">
           <AiOutlineCloseSquare style={style} onClick={closeModal} />
           <h3>Edit the product below</h3>
-          <form onSubmit={updateProduct}>
+          <form>
             <input
               id="pName"
               defaultValue={props.productName}
@@ -110,6 +110,7 @@ function EditProductCard(props) {
               type="submit"
               variant="contained"
               style={{ marginLeft: "60px", width: "80%" }}
+              onClick={updateProduct}
             >
               Update Product
             </Button>

@@ -60,6 +60,7 @@ function ProductCard(props) {
           if (res) {
             console.log("Deleted: " + props.productName);
             props.editRender(true);
+            window.location.reload();
           }
         });
     }

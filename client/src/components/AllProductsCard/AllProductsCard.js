@@ -20,7 +20,7 @@ function AllProductsCard(props) {
   return (
     <>
       <div className="allProductsCard" onClick={viewProduct}>
-        <img src={props.image} alt="irons" id="cardImg" />
+        <img src={props.image} alt={props.productName} id="cardImg" />
 
         <div className="cardInfo">
           <h3 className="productName" style={{ marginTop: "10px" }}>
@@ -30,7 +30,7 @@ function AllProductsCard(props) {
           <p id="prodDescription">{props.productDescription}</p>
 
           <p>Rating: {props.productRating}</p>
-          <p>Hand: {props.variations}</p>
+          <p>Hand: {props.productHand}</p>
         </div>
       </div>
     </>

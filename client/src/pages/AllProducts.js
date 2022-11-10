@@ -25,7 +25,7 @@ function Product(props) {
             productPrice={item.productPrice}
             productRating={item.productRating}
             image={URL + item.image}
-            hand={item.hand}
+            productHand={item.hand}
             editRender={props.setRenderProducts}
           />
         ));

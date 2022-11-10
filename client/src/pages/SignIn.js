@@ -115,7 +115,7 @@ export default function SignUp() {
                     style={{ backgroundColor: "#74bde0" }}
                     onClick={submit}
                   >
-                    Sign Up
+                    Sign In
                   </Button>
                   <Grid container justifyContent="flex-end">
                     <Grid item>
