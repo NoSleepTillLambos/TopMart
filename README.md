@@ -123,7 +123,7 @@ Here are a couple of ways to clone this repo:
 
 Users can browse and view products, descriptions regarding prices and club orientations have been included to make the buyers life a little easier
 
-![image4](src/assets/allProducts.png)
+![image4](client/src/assets/allProducts.png)
 
 ## Concept Process
 
